@@ -3,7 +3,6 @@ import {
   Text,
   TextInput,
   View,
-  StatusBar,
   StyleSheet,
   TouchableOpacity,
   Alert,
@@ -34,9 +33,9 @@ export default function SignUp() {
         password,
       });
       Alert.alert("Sucesso", "Usuário criado com sucesso!");
-    } catch (err) {
-      if (err.response) {
-        setError(err.response.data.message);
+    } catch (error) {
+      if (error.response) {
+        setError(error.response.data.message);
       }
       setError("Não foi possivel se conectar com o servidor");
     }
